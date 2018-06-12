@@ -22,7 +22,17 @@ if('POST' == $_SERVER['REQUEST_METHOD']){
 
 	if($phone === $res['phone'] && $passwd === $res['password'] )
 	{
-		echo '<script language="JavaScript">;alert("登录成功！");location.href="http://test.helloworld.com/";</script>;';
+		//记录用户登录状态
+		$_SESSION['userInfo'] = [
+			'phone'   => $phone,
+			'isLogin' => 1,
+		];
+
+		if(!empty($_SESSION['userInfo']) || $_SESSION['userInfo']['isLogin'] === 1){
+			
+			echo '<script language="JavaScript">;alert("登录成功！");location.href="http://test.helloworld.com/welcome.html";</script>;';
+		}
+
 
 	}else{
 
