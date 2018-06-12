@@ -8,6 +8,18 @@ $passwd = $_POST['passwd'];
 if('POST' == $_SERVER['REQUEST_METHOD']){
 
 
+	if(empty($phone) || empty($passwd)){
+		echo '<script language="JavaScript">;alert("手机号和密码不能为空难");history.back();</script>';
+		exit;
+	}
+
+	if(!checkPhone($phone)){
+		echo '<script language="JavaScript">;alert("请输入正确的手机号");history.back();</script>';
+		exit;
+
+	}
+
+
 	$dbc = mysqli_connect("localhost","root","xlghl123.com","helloworld") or die("连接数据库失败");
 
 	$query = "select phone,salt,password from hello_user where phone=$phone;";
@@ -29,7 +41,7 @@ if('POST' == $_SERVER['REQUEST_METHOD']){
 		];
 
 		if(!empty($_SESSION['userInfo']) || $_SESSION['userInfo']['isLogin'] === 1){
-			
+
 			echo '<script language="JavaScript">;alert("登录成功！");location.href="http://test.helloworld.com/welcome.html";</script>;';
 		}
 
