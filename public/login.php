@@ -9,7 +9,7 @@ if('POST' == $_SERVER['REQUEST_METHOD']){
 
 
 	if(empty($phone) || empty($passwd)){
-		echo '<script language="JavaScript">;alert("手机号和密码不能为空难");history.back();</script>';
+		echo '<script language="JavaScript">;alert("手机号和密码不能为空");history.back();</script>';
 		exit;
 	}
 
