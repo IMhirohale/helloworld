@@ -1,10 +1,7 @@
 <?php
 
-<<<<<<< HEAD
 require("../common/public_function.php");
 
-=======
->>>>>>> 58cdf863d58f5b6e02bc63387fbc9b5ac9a07559
 $phone = $_POST['phone'];
 $passwd = $_POST['passwd'];
 
@@ -25,10 +22,6 @@ if('POST' == $_SERVER['REQUEST_METHOD']){
 
 	if($phone === $res['phone'] && $passwd === $res['password'] )
 	{
-<<<<<<< HEAD
-=======
-		//header('Location: http://test.helloworld.com/');
->>>>>>> 58cdf863d58f5b6e02bc63387fbc9b5ac9a07559
 		echo '<script language="JavaScript">;alert("登录成功！");location.href="http://test.helloworld.com/";</script>;';
 
 	}else{
@@ -38,9 +31,3 @@ if('POST' == $_SERVER['REQUEST_METHOD']){
 	}
 }
 
-<<<<<<< HEAD
-=======
-function saltPasswd($pw, $salt){
-	return md5(md5($pw) . ', ' . $salt);
-}
->>>>>>> 58cdf863d58f5b6e02bc63387fbc9b5ac9a07559
